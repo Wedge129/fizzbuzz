@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>FizzBuzz</title>
+</head>
+<body>
+    <button>Click me</button>
+    <div id="answer"> <br/></div>
+    
+    <script>
+        const button = document.querySelector("button");
+
+        function getMax(){
+            let number = prompt("Entez a number");
+            const max = parseInt(number);
+            loop(max);
+            
+        }
+
+        function loop(max){
+            const showText = document.getElementById('answer');
+            const fizz = "Fizz";
+            const buzz = "Buzz";
+            for(let i=1;i<=max;i++){
+                console.log(i);
+                if(i%3 ==0 && i%5 ==0){
+                    const text = document.createTextNode(fizz+buzz);
+                    showText.appendChild(text);
+                    showText.append('\n');
+                }
+                else if(i%3 ==0){
+                    const text = document.createTextNode(fizz);
+                    showText.appendChild(text);
+                    showText.append('\n');
+                }else if(i%5==0){
+                    const text = document.createTextNode(buzz);
+                    showText.appendChild(text);
+                    showText.append('\n');
+                }
+                else{
+                    const text = document.createTextNode(i);
+                    showText.appendChild(text);
+                    showText.append('\n');
+                }
+            }
+        }
+
+        button.addEventListener("click",getMax);
+       
+       
+    </script>
+</body>
+</html>
